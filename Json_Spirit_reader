@@ -1,0 +1,19 @@
+vector< Address > read_addrs( const char* file_name )
+{
+    ifstream is( file_name );
+
+    Value value;
+
+    read( is, value );
+    
+    cout<<value.type()<<endl;
+      switch(value.type()) {
+        case obj_type:    cout<<"obj"<<endl;   break;
+        case array_type:  cout<<"array"<<endl; break;
+        case str_type:    cout<<"<string>"<<endl;   break;
+        case bool_type:   cout<<"<bool>"<<endl;  break;
+        case int_type:    cout<<"<int>"<<endl;   break;
+        case real_type:   cout<<"<double>"<<endl;  break;
+        case null_type:   cout<<"null"<<endl;  break;
+    }
+}
